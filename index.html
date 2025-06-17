@@ -3,34 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora de imc</title>
+    <title>Calculadora de IMC</title>
 
     <link rel="stylesheet" href="style.css" />
 
     <!-- Fonte Caprasimo -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=IBM+Plex+Serif:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <h1 class="title">Calculadora de IMC</h1>
-    <form action="">
-      <div>
+    <form onsubmit="calcularImc(event)">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Ex: Kayky Rodrigues"
+          required
+        />
+      </div>
+
+      <div class="form-group">
         <label for="peso">Peso</label>
-        <input type="number" name="peso" id="peso" placeholder="Ex: 60" step="0.01" required/>
+        <input
+          type="number"
+          name="peso"
+          id="peso"
+          placeholder="Ex: 60"
+          step="10"
+          required
+        />
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="altura">Altura</label>
-        <input type="number" name="altura" id="altura" placeholder="Ex: 1.60" step="0.01" required/>
-      </div>
-      <div>
-        <label for="imc">IMC</label>
-        <p id="resultadoImc"></p>
+        <input
+          type="number"
+          name="altura"
+          id="altura"
+          placeholder="Ex: 1.60"
+          step="0.10"
+          required
+        />
       </div>
 
-      <button onclick="calcularImc()">Calcular</button>
+      <p id="resultadoImc"></p>
+
+      <!-- BOTÃO DIFERENCIADO -->
+      <div class="buttons">
+        <button class="blob-btn">
+          Calcular
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+        <br/>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+      <!-- FIM DO BOTÃO DIFERENCIADO -->
+
     </form>
     <script src="script.js"></script>
   </body>
