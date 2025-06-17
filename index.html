@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de imc</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonte Caprasimo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <h1 class="title">Calculadora de IMC</h1>
+    <form action="">
+      <div>
+        <label for="peso">Peso</label>
+        <input type="number" name="peso" id="peso" placeholder="Ex: 60" step="0.01" required/>
+      </div>
+
+      <div>
+        <label for="altura">Altura</label>
+        <input type="number" name="altura" id="altura" placeholder="Ex: 1.60" step="0.01" required/>
+      </div>
+      <div>
+        <label for="imc">IMC</label>
+        <p id="resultadoImc"></p>
+      </div>
+
+      <button onclick="calcularImc()">Calcular</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
